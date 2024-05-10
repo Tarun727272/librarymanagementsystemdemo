@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Check Book Availability</title>
+</head>
+<body>
+    <h1>Check Book Availability</h1>
+    <form th:action="@{/checkAvailability}" method="post">
+    <label for="bookName">Enter Book Name:</label>
+    <input type="text" id="bookName" name="bookName" required>
+    <label for="authorName">Enter Author:</label>
+    <input type="text" id="authorName" name="authorName" required>
+    <button type="submit">Check Availability</button>
+</form>
+
+    <div th:if="${notAvailable}">
+        <p>Book is not available.</p>
+    </div>
+    <div th:if="${available}">
+        <p>Book is available.</p>
+    </div>
+</body>
+</html>

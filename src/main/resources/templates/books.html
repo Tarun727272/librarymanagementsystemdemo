@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- Display all books -->
+<table border>
+    <thead>
+        <tr>
+            <th>Serial No</th>
+            <th>Name</th>
+            <th>Author Name</th>
+            <th>Category</th>
+            <th>Status</th>
+            <th>Cost</th>
+            <th>Procurement Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="book : ${books}">
+            <td th:text="${book.serialNo}"></td>
+            <td th:text="${book.name}"></td>
+            <td th:text="${book.authorName}"></td>
+            <td th:text="${book.category}"></td>
+            <td th:text="${book.status}"></td>
+            <td th:text="${book.cost}"></td>
+            <td th:text="${book.procurementDate}"></td>
+        </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
